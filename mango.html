@@ -1,0 +1,132 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['uid'])){
+	header('Location:index.php');
+	}
+ ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AGRIMARKET</title>
+	<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="shortcut icon" href="assets/images/aaa.png">
+</head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top"  id="topnav">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.php" class="navbar-brand"><b>AGRIMARKET</b></a>
+			</div>
+
+			<ul class="nav navbar-nav">
+
+				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search" name=""></li>
+				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn" name=""><span class='glyphicon glyphicon-search'></span></button></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li id='shoppingcart'><a id="carticon" href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart <span class="badge">2</span>	</a>
+					<div class="dropdown-menu" style="width: 400px;">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-md-3"><strong>S. No.</strong></div>
+									<div class="col-md-3"><strong>Crop Image</strong></div>
+									<div class="col-md-3"><strong>Crop Name</strong></div>
+									<div class="col-md-3"><strong>Price in Rs</strong></div>
+								</div>
+								<hr>
+								<div id="cartmenu">
+								<!--<div class="row">
+									<div class="col-md-3">S. No.</div>
+									<div class="col-md-3">Crop Image</div>
+									<div class="col-md-3">Crop Name</div>
+									<div class="col-md-3">Price in Rs</div>
+								</div>-->
+								</div>
+							</div>
+							<div class="panel-body"></div>
+							<div class="panel-footer"></div>
+						</div>
+					</div>
+				</li>
+				<li><a href="profile.php"><span class="glyphicon glyphicon-home"></span>Home</a>
+				<li><a href="addcrop.html"><span class="glyphicon glyphicon-upload"></span>Sell crops</a>
+				<li><a href="assitance.html"><span class="glyphicon glyphicon-question-sign"></span>Assistant</a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>  <?php echo $_SESSION['uname']; ?></a>
+				<ul class="dropdown-menu">
+					<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart-large"></span>Checkout Cart</a></li>
+					
+					<li><a href="logout.php">Logout</a></li>
+				</ul>
+
+				</li>
+
+				</ul>
+
+		</div>
+	</div>
+	<br><br><br><br><br><br>
+	
+	
+	
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b> Mango:</b></h1>
+    </div>
+  </header>
+  <br>
+    <center><h4><b><font size="6">Mango (Mangifera indica L.)</font></b></h4></center>
+    <center><h4><b><font size="6">Anacardiaceae</font></b></h4></center>
+	
+	<h3><li><b>Varieties:</b></li></h3>
+                <font size="6"><p>Neelum, Bangalora, Alphonso, Rumani, Banganapalli, Kalepad, Peter, PKM 1, PKM 2, Sendura, Jahangir, Mulgoa, Himayuddin, Paiyur 1, Mallika, Amrapali and Salem Bangalora, Arka Anmol, Arka Aruna, Arka Neelkiran, Arka Puneeth and Sindhu are popular varieties in mango.</p></font>
+
+    <h3><li><b>Varieties suiable for Tamil Nadu:</b></li></h3>	
+     <font size="6">Banganapalli, Bangalora, Neelum, Rumani, Mulgoa, Alphonso, Senthura, Kalepad, Imam Pasand.</font>
+	 
+	 <h3><li><b>Soil and climate:</b></li></h3>
+     <font size="6">Ideal soil for mango is red loamy. Good drainage is preferable for better establishment. Ideal pH range is from 6.5 to 8.0.</font>
+
+     <h3><li><b>Season of planting:</b></li></h3>
+     <font size="6">Planting spreads from July to December.</font>
+
+     <h3><li><b>Planting material:</b></li></h3>
+     <font size="6">Approach and epicotyl grafts are used for planting.</font>
+	 
+	  <h3><li><b>Field preparation</b></li></h3>
+     <font size="6">Dig pits of 1 m x 1 m x 1 m. Fill in with topsoil mixed with 10 kg of FYM and 100 g per pit.</font>
+
+      <h3><li><b>Spacing</b></li></h3>
+     <font size="6">Adopt any one of the following spacing depending on requirements.</font>
+
+     <font size="6">1)Under conventional system of planting: 7-10 m either way</font>
+     <font size="6">)High Density Planting : 5m x 5 m  (400 plants /ha)</font>
+     <font size="6">3)Double hedge row system : Adopt  a spacing of  5m x  5m within double rows and 10m between sucessive double rows (266 plants/ha)</font>
+
+	  <h3><li><b>Planting</b></li></h3>
+     <font size="6">Grafts are planted in the centre of pit with ball of earth intact followed by watering and staking. The graft union must be 15 cm above the ground level.</font>
+
+	  <h3><li><b>Irrigation</b></li></h3>
+     <font size="6">Regular watering is recommended till establishment. Under conventional irrigation systems, weekly irrigation is essential. However, under micro-irrigation the requirement is restricted to one-third of the water required for conventional method.</font>
+
+      <h3><li><b>Intercropping</b></li></h3>
+     <font size="6">Short duration crops like legumes, vegetables, groundnut etc. can be raised during pre- bearing age.</font>
+	 
+	 <h3><li><b>Canopy management:</b></li></h3>
+        <font size="6">Remove root stock sprouts and low lying branches nearer to ground to facilitate easy cultural operations. Remove overlapping, intercrossing, diseased, dried and weak branches in old trees to get good sunlight and aeration.  Carry out judicious pruning of the internal branches during August – September, once in three years.  Do not allow flowering upto three years by removing the inflorescences as and when they appear.  Retain two healthy shoots by trimming away the weak shoots among the crowded terminal shoots during August-September annually. Prune back 20 cm of annual growth of the terminals immediately after harvest.</font>
+
+     <h3><li><b>Top working of senile orchards for rejuvenation:</b></li></h3>
+             <font size="6">Use scions of choice varieties like Alphonso and Banganapalli for top working. Behead the trees to be top worked portion during July- August leaving the main trunk at a convenient height and allow for new shoots to develop.  Adopt cleft method of grafting or softwood grafting on the emerging shoots on the main stem from the cut end during September- October.</font>
+
+     <h3><li><b>rowth regulators:</b></li></h3>          
+        <font size="6"><p>NAA @ 20 ppm is sprayed at flowering to increase the fruit retention.  During February 0.5% Urea (5 g/lit.) or 1% Potassium Nitrate (10g/lit.) may be sprayed to induce flowering, if trees do not flower by that time. Spraying of 2% KNO3 at mustard size will increase the fruit set and retention of fruits.
+        Application of Paclobutrazol @ 10 g a.i. for non-bearing trees during first fortnight of September will induce flowering and fruitset yield during off years.</p></font>

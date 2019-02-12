@@ -1,0 +1,341 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['uid'])){
+	header('Location:index.php');
+	}
+ ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AGRIMARKET</title>
+	<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="shortcut icon" href="assets/images/aaa.png">
+</head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top"  id="topnav">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.php" class="navbar-brand"><b>AGRIMARKET</b></a>
+			</div>
+
+			<ul class="nav navbar-nav">
+
+				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search" name=""></li>
+				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn" name=""><span class='glyphicon glyphicon-search'></span></button></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li id='shoppingcart'><a id="carticon" href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart <span class="badge">2</span>	</a>
+					<div class="dropdown-menu" style="width: 400px;">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-md-3"><strong>S. No.</strong></div>
+									<div class="col-md-3"><strong>Crop Image</strong></div>
+									<div class="col-md-3"><strong>Crop Name</strong></div>
+									<div class="col-md-3"><strong>Price in Rs</strong></div>
+								</div>
+								<hr>
+								<div id="cartmenu">
+								<!--<div class="row">
+									<div class="col-md-3">S. No.</div>
+									<div class="col-md-3">Crop Image</div>
+									<div class="col-md-3">Crop Name</div>
+									<div class="col-md-3">Price in Rs</div>
+								</div>-->
+								</div>
+							</div>
+							<div class="panel-body"></div>
+							<div class="panel-footer"></div>
+						</div>
+					</div>
+				</li>
+				<li><a href="profile.php"><span class="glyphicon glyphicon-home"></span>Home</a>
+				<li><a href="addcrop.html"><span class="glyphicon glyphicon-upload"></span>Sell crops</a>
+				<li><a href="assitance.html"><span class="glyphicon glyphicon-question-sign"></span>Assistant</a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>  <?php echo $_SESSION['uname']; ?></a>
+				<ul class="dropdown-menu">
+					<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart-large"></span>Checkout Cart</a></li>
+					
+					<li><a href="logout.php">Logout</a></li>
+				</ul>
+
+				</li>
+
+				</ul>
+
+		</div>
+	</div>
+	<br><br><br><br><br><br>
+	<!-- Slider Begins -->
+
+	 <div class="one-time">
+	    <div><img src="assets/images/pic1.jpeg"></div>
+	    <div><img src="assets/images/pic4.jpeg"></div>
+	    <div><img src="assets/images/pic5.jpeg"></div>
+  	</div>
+
+	<!-- Slider ends -->
+
+	<br>
+
+
+
+	<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>Tropical and Sub-Tropical Fruits</b></h1>
+    </div>
+  </header>
+  <br>
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+       <a href="mango.html"><img src="assets/images/fruits/Tropic/ma.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	   <b><h4><li>Mango</li></h4></b>
+       </div>
+    </div>
+	
+    <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/ba.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+      <b><h4><li>Banana</li></h4></b>	  
+	  </div>
+	  </div>
+	  
+	  <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/sapota.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+      <b><h4><li>Sapota</li></h4></b>	  
+	  </div>
+	  </div>
+	  
+	  
+	 
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+   <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/Papaya.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	   <b><h4><li>Papaya</li></h4></b>
+	   </div>
+	  </div>
+	  
+    <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/guava.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	  <b><h4><li>Guava</li></h4></b>
+	  </div>
+	  </div>
+	  
+     <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/acid_lime.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Acid Lime</li></h4></b>
+
+	  </div>
+	  </div> 
+	
+  </div>
+
+    <!-- Third Photo Grid-->
+  <div class="w3-row-padding">
+   <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/Sweet_Orange.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Sweet Orange</li></h4></b>
+      </div>
+	  </div>
+	  
+    <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/mo.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Mandarian Orange</li></h4></b>
+       </div>
+	  </div>
+	  
+     <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/Grapes.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Grapes</li></h4></b>
+
+	  </div>
+	  </div> 
+	
+  </div>
+
+    <!-- Fourth Photo Grid-->
+  <div class="w3-row-padding">
+   <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/Pineapple.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Pine Apple</li></h4></b>
+
+	  </div>
+	  </div>
+	  
+    <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/Pomegranate.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Pomegranate</li></h4></b>
+
+	  </div>
+	  </div>
+	  
+     <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/Jack.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Jack</li></h4></b>
+
+	  </div>
+	  </div> 
+	
+  </div>
+  
+  
+    <!-- Fifth Photo Grid-->
+  <div class="w3-row-padding">
+   <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/Ber.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Ber</li></h4></b>
+
+	  </div>
+	  </div>
+	  
+    <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/Amla.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Amla</li></h4></b>
+
+	  </div>
+	  </div>
+	  
+     <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Tropic/Jamun.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	 <b><h4><li>Jamun</li></h4></b>
+
+	  </div>
+	  </div> 
+	
+  </div>
+  <br>
+
+  <header id="portfolio">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>Temperate Fruits:</b></h1>
+    </div>
+  </header>
+  <br>
+   <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+       <a href="cart.php"><img src="assets/images/fruits/Temp/Apple.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	   <b><h4><li>Apple</li></h4></b>
+       </div>
+    </div>
+	
+    <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Temp/Pear.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+      <b><h4><li>Pear</li></h4></b>	  
+	  </div>
+	  </div>
+	  </div>
+	  
+	   <!--Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+       <a href="cart.php"><img src="assets/images/fruits/Temp/Plum.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	   <b><h4><li>Plum</li></h4></b>
+       </div>
+    </div>
+	
+    <div class="w3-third w3-container w3-margin-bottom">
+     <a href="cart.php"><img src="assets/images/fruits/Temp/Peach.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+      <b><h4><li>Peach</li></h4></b>	  
+	  </div>
+	  </div>
+	  </div>
+	  
+	   <header id="portfolio">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>Minor Fruits:</b></h1>
+    </div>
+  </header>
+  <br>
+   <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+       <a href="cart.php"><img src="assets/images/fruits/minor/minor.png" alt="Norway" style="width:100%" class="w3-hover-opacity"> </a>       
+      <div class="w3-container w3-white">
+	   <b><h4><li>Minor Varieties</li></h4></b>
+       </div>
+    </div>
+	</div>
+  
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+	<script src="assets/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<script src="main.js"></script>
+</body>
+<style> .foot{text-align: center;}
+</style>
+</html>
